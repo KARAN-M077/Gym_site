@@ -16,6 +16,7 @@ import GymLocator from "../Location/GymLocator";
 import Blogs from "../Blog/Blogs";
 import FAQs from "../FAQs/FAQs";
 import Footer from "../Footer/Footer";
+import { FaBars } from 'react-icons/fa';
 import { Link, useNavigate } from "react-router-dom"; // useNavigate to handle page navigation
 import { Link as ScrollLink } from "react-scroll"; // use this for smooth scrolling within the same page
 import AOS from "aos";
@@ -44,6 +45,7 @@ const Section1 = () => {
       }
     }, 500); // Timeout to allow page navigation before scrolling
   };
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
@@ -56,64 +58,127 @@ const Section1 = () => {
       >
         {/* Navbar */}
         <div className="flex justify-center ">
-          <nav className="w-[90%] lg:w-[80%] bg-[#0f0f0f] rounded-full h-16 lg:h-20 flex items-center mt-5 lg:mt-10 fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
-            <img src={logo} alt="logo" className="h-8 lg:h-10 ml-3" />
-            <ul className="header hover:cursor-pointer hidden md:flex text-sm lg:text-[15px] gap-2 lg:gap-10 ml-auto mr-5 text-[#96979C] items-center">
+        <nav className="w-[90%] lg:w-[80%] bg-[#0f0f0f] rounded-full h-16 lg:h-20 flex items-center mt-5 lg:mt-10 fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
+      <img src={logo} alt="logo" className="h-8 lg:h-10 ml-3" />
+      
+      {/* Mobile Menu Icon */}
+      <div className="md:hidden ml-auto mr-5">
+        <button onClick={() => setMenuOpen(!menuOpen)}>
+          <FaBars className="text-[#CEF240] text-2xl" />
+        </button>
+      </div>
+
+      {/* Desktop Menu */}
+      <ul className={`header hover:cursor-pointer hidden md:flex text-sm lg:text-[15px] gap-2 lg:gap-10 ml-auto mr-5 text-[#96979C] items-center`}>
+        <li>
+          <ScrollLink to="home" smooth={true} duration={500}>
+            HOME
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink to="mission" smooth={true} duration={500}>
+            ABOUT
+          </ScrollLink>
+        </li>
+        <li
+          className="relative py-8"
+          onMouseEnter={() => setDropdownOpen(true)}
+          onMouseLeave={() => setDropdownOpen(false)}
+        >
+          OUR SERVICES
+          {dropdownOpen && (
+            <ul
+              className="absolute top-full -left-10 bg-[#0f0f0f] text-white rounded-lg border-[1px] border-solid-white shadow-lg  w-56 flex flex-col gap-5 p-5"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
               <li>
-                <ScrollLink to="home" smooth={true} duration={500}>
-                  HOME
-                </ScrollLink>
+                <Link to="/WorkoutPlan" className="px-4 py-2 hover:bg-[#1c1c1c]">
+                  Workout Plan
+                </Link>
               </li>
               <li>
-                <ScrollLink to="mission" smooth={true} duration={500}>
-                  ABOUT
-                </ScrollLink>
+                <Link to="/DietPlan" className="px-4 py-2 hover:bg-[#1c1c1c]">
+                  Diet Plan
+                </Link>
               </li>
-              <li
-                className="relative py-8"
-                onMouseEnter={() => setDropdownOpen(true)}
-                onMouseLeave={() => setDropdownOpen(false)}
+            </ul>
+          )}
+        </li>
+        <li>
+          <ScrollLink to="benefits" smooth={true} duration={500}>
+            BENEFITS
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink to="blogs" smooth={true} duration={500}>
+            BLOGS
+          </ScrollLink>
+        </li>
+        <li>
+          <ScrollLink to="footer" smooth={true} duration={500}>
+            CONTACTS
+          </ScrollLink>
+        </li>
+        <button className="bg-[#EB0000] text-white px-4 py-2 lg:px-[28px] lg:py-[14px] rounded-full">
+          Join us now
+        </button>
+      </ul>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-20 rounded-lg -right-10 transform -translate-x-1/2 bg-[#0f0f0f] w-fit z-40">
+          <ul className="flex flex-col text-sm text-[#96979C] gap-4 py-5 px-8 ">
+            <li>
+              <ScrollLink to="home" smooth={true} duration={500}>
+                HOME
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="mission" smooth={true} duration={500}>
+                ABOUT
+              </ScrollLink>
+            </li>
+            <li>
+              <div
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="cursor-pointer"
               >
                 OUR SERVICES
-                {dropdownOpen && (
-                  <ul
-                    className="absolute top-full -left-10 bg-[#0f0f0f] text-white rounded-lg border-[1px] border-solid-white shadow-lg  w-56 flex flex-col gap-5 p-5"
-                    onMouseEnter={() => setDropdownOpen(true)}
-                    onMouseLeave={() => setDropdownOpen(false)}
-                  >
-                    <li>
-                      <Link to="/WorkoutPlan" className="px-4 py-2 hover:bg-[#1c1c1c]">
-                        Workout Plan
-                      </Link>
-                    </li>
-                    <li>
-                      <Link to="/DietPlan" className="px-4 py-2 hover:bg-[#1c1c1c]">
-                        Diet Plan
-                      </Link>
-                    </li>
-                  </ul>
-                )}
-              </li>
-              <li>
-                <ScrollLink to="benefits" smooth={true} duration={500}>
-                  BENEFITS
-                </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink to="blogs" smooth={true} duration={500}>
-                  BLOGS
-                </ScrollLink>
-              </li>
-              <li>
-                <ScrollLink to="footer" smooth={true} duration={500}>
-                  CONTACTS
-                </ScrollLink>
-              </li>
-              <button className="bg-[#EB0000] text-white px-4 py-2 lg:px-[28px] lg:py-[14px] rounded-full">
-                Join us now
-              </button>
-            </ul>
-          </nav>
+              </div>
+              {dropdownOpen && (
+                <div className="flex flex-col pl-4">
+                  <Link to="/WorkoutPlan" className="py-2 text-white">
+                    Workout Plan
+                  </Link>
+                  <Link to="/DietPlan" className="py-2 text-white">
+                    Diet Plan
+                  </Link>
+                </div>
+              )}
+            </li>
+            <li>
+              <ScrollLink to="benefits" smooth={true} duration={500}>
+                BENEFITS
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="blogs" smooth={true} duration={500}>
+                BLOGS
+              </ScrollLink>
+            </li>
+            <li>
+              <ScrollLink to="footer" smooth={true} duration={500}>
+                CONTACTS
+              </ScrollLink>
+            </li>
+            {/* <button className="bg-[#EB0000] text-white px-4 py-2 rounded-full">
+              Join us now
+            </button> */}
+          </ul>
+        </div>
+      )}
+    </nav>
         </div>
 
         {/* Other sections */}

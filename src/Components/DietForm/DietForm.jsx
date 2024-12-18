@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { FaBars } from 'react-icons/fa';
 const DietForm = () => {
     useEffect(() => {
         AOS.init({
@@ -45,40 +46,132 @@ const DietForm = () => {
         console.log("Form Submitted!", formData);
         alert("Your personalized diet plan request has been submitted!");
       };
+      const [menuOpen, setMenuOpen] = useState(false);
   return (
     <>
                 <div className="w-screen bg-black  h-32 fixed " >
                     <div className="flex justify-center">
-                <nav className="w-[90%] lg:w-[80%] bg-[#0f0f0f] rounded-full h-16 lg:h-20 flex items-center mt-6  fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
-  <img src={logo} alt="logo" className="h-8 lg:h-10 ml-3" />
-  <ul className="header hidden md:flex text-sm lg:text-[15px] gap-2 lg:gap-10 ml-auto mr-5 text-[#96979C] items-center">
-    <li>HOME</li>
-    <li>ABOUT</li>
-    <li 
-      className="relative py-8" 
-      onMouseEnter={() => setDropdownOpen(true)} 
-      onMouseLeave={() => setDropdownOpen(false)}
-    >
-      OUR SERVICES
-      {dropdownOpen && (
-        <ul 
-          className="absolute top-full -left-10 bg-[#0f0f0f] text-white rounded-lg border-[1px] border-solid-white shadow-lg  w-56 flex flex-col gap-5 p-5" 
-          onMouseEnter={() => setDropdownOpen(true)} 
+        <nav className="w-[90%] lg:w-[80%] bg-[#0f0f0f] rounded-full h-16 lg:h-20 flex items-center mt-5 lg:mt-10 fixed top-0 left-1/2 transform -translate-x-1/2 z-50">
+      <img src={logo} alt="logo" className="h-8 lg:h-10 ml-3" />
+      
+      {/* Mobile Menu Icon */}
+      <div className="md:hidden ml-auto mr-5">
+        <button onClick={() => setMenuOpen(!menuOpen)}>
+          <FaBars className="text-[#CEF240] text-2xl" />
+        </button>
+      </div>
+
+      {/* Desktop Menu */}
+      <ul className={`header hover:cursor-pointer hidden md:flex text-sm lg:text-[15px] gap-2 lg:gap-10 ml-auto mr-5 text-[#96979C] items-center`}>
+        <li>
+          <Link to="/" smooth={true} duration={500}>
+            HOME
+          </Link>
+        </li>
+        <li>
+          <Link to="/" smooth={true} duration={500}>
+            ABOUT
+          </Link>
+        </li>
+        <li
+          className="relative py-8"
+          onMouseEnter={() => setDropdownOpen(true)}
           onMouseLeave={() => setDropdownOpen(false)}
         >
-          <li><Link to='/WorkoutPlan' className="px-4 py-2 hover:bg-[#1c1c1c]">Workout Plan</Link></li>
-          <li><Link to='/DietPlan' className="px-4 py-2 hover:bg-[#1c1c1c]">Diet Plan</Link></li>
-        </ul>
+          OUR SERVICES
+          {dropdownOpen && (
+            <ul
+              className="absolute top-full -left-10 bg-[#0f0f0f] text-white rounded-lg border-[1px] border-solid-white shadow-lg  w-56 flex flex-col gap-5 p-5"
+              onMouseEnter={() => setDropdownOpen(true)}
+              onMouseLeave={() => setDropdownOpen(false)}
+            >
+              <li>
+                <Link to="/WorkoutPlan" className="px-4 py-2 hover:bg-[#1c1c1c]">
+                  Workout Plan
+                </Link>
+              </li>
+              <li>
+                <Link to="/DietPlan" className="px-4 py-2 hover:bg-[#1c1c1c]">
+                  Diet Plan
+                </Link>
+              </li>
+            </ul>
+          )}
+        </li>
+        <li>
+          <Link to="/" smooth={true} duration={500}>
+            BENEFITS
+          </Link>
+        </li>
+        <li>
+          <Link to="/" smooth={true} duration={500}>
+            BLOGS
+          </Link>
+        </li>
+        <li>
+          <Link to="/" smooth={true} duration={500}>
+            CONTACTS
+          </Link>
+        </li>
+        <button className="bg-[#EB0000] text-white px-4 py-2 lg:px-[28px] lg:py-[14px] rounded-full">
+          Join us now
+        </button>
+      </ul>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-20 rounded-lg -right-10 transform -translate-x-1/2 bg-[#0f0f0f] w-fit z-40">
+          <ul className="flex flex-col text-sm text-[#96979C] gap-4 py-5 px-8 ">
+            <li>
+              <Link to="/" smooth={true} duration={500}>
+                HOME
+              </Link>
+            </li>
+            <li>
+              <Link to="/" smooth={true} duration={500}>
+                ABOUT
+              </Link>
+            </li>
+            <li>
+              <div
+                onClick={() => setDropdownOpen(!dropdownOpen)}
+                className="cursor-pointer"
+              >
+                OUR SERVICES
+              </div>
+              {dropdownOpen && (
+                <div className="flex flex-col pl-4">
+                  <Link to="/WorkoutPlan" className="py-2 text-white">
+                    Workout Plan
+                  </Link>
+                  <Link to="/DietPlan" className="py-2 text-white">
+                    Diet Plan
+                  </Link>
+                </div>
+              )}
+            </li>
+            <li>
+              <Link to="/" smooth={true} duration={500}>
+                BENEFITS
+              </Link>
+            </li>
+            <li>
+              <Link to="/" smooth={true} duration={500}>
+                BLOGS
+              </Link>
+            </li>
+            <li>
+              <Link to="/" smooth={true} duration={500}>
+                CONTACTS
+              </Link>
+            </li>
+            {/* <button className="bg-[#EB0000] text-white px-4 py-2 rounded-full">
+              Join us now
+            </button> */}
+          </ul>
+        </div>
       )}
-    </li>
-    <li>BENEFITS</li>
-    <li>BLOGS</li>
-    <li>CONTACTS</li>
-    <button className="bg-[#EB0000] text-white px-4 py-2 lg:px-[28px] lg:py-[14px] rounded-full">
-      Join us now
-    </button>
-  </ul>
-</nav>
+    </nav>
                     </div>
                 </div>
       <div
