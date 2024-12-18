@@ -1,9 +1,0 @@
-/* Hide the scrollbar for all elements */
-* {
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    scrollbar-width: none; /* For Firefox */
-}
-
-*::-webkit-scrollbar {
-    display: none; /* For Chrome, Safari, and Edge */
-}

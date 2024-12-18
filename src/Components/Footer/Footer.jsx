@@ -1,7 +1,7 @@
 import React from "react";
 import { FaLinkedin, FaXTwitter, FaInstagram } from "react-icons/fa6";
 import { MdEmail } from "react-icons/md";
-
+import logo from "../../assets/logo.png"
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-8">
@@ -10,8 +10,7 @@ const Footer = () => {
         <div className="flex flex-col items-center">
           <div className="flex items-center gap-2">
             {/* Logo */}
-            <span className="text-red-600 text-4xl font-bold">G</span>
-            <h1 className="text-2xl font-semibold">GymFluencer</h1>
+            <img src={logo} alt='logo'/>
           </div>
           <p className="text-gray-400 text-sm text-center mt-1">
             Where Fitness Meets Social Connection!
