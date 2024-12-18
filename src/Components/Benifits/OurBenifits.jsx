@@ -36,11 +36,11 @@ const OurBenifits = () => {
       <div className="bg-black text-white py-12 px-4">
                     {/* Header */}
                     <div className="text-center mb-10">
-                        <p className="text-sm text-gray-400 mb-2">⭐ Our Benefits</p>
-                        <h2 className="text-3xl lg:text-5xl font-bold text-[#EB0000]">
+                        <p className=" header text-sm text-gray-400 mb-2">⭐ Our Benefits</p>
+                        <h2 className=" header text-3xl lg:text-5xl font-bold text-[#EB0000]">
                             Discover GymFluencer Benefits
                         </h2>
-                        <p className="mt-2 text-gray-400 text-sm lg:text-base">
+                        <p className="para mt-2 text-gray-400 text-sm lg:text-base">
                             Unlock your full potential with GymFluencer, your personal fitness
                             partner for progress and motivation.
                         </p>
@@ -54,10 +54,10 @@ const OurBenifits = () => {
                             <div className="bg-[#0a0a0a] rounded-lg p-6 shadow-md flex items-start gap-4 flex-col">
                                 <div className="bg-[#161616] p-3 rounded-lg border-1 border-solid-white">{benefits[0].icon}</div>
                                 <div>
-                                    <h3 className="text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
+                                    <h3 className=" header text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
                                         {benefits[0].title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm lg:text-base">
+                                    <p className="para text-gray-400 text-sm lg:text-base">
                                         {benefits[0].description}
                                     </p>
                                 </div>
@@ -66,10 +66,10 @@ const OurBenifits = () => {
                             <div className="bg-[#121212] rounded-lg p-6 shadow-md flex items-start gap-4 flex-col">
                                 <div className="bg-[#161616] p-3 rounded-lg border-1 border-solid-white">{benefits[1].icon}</div>
                                 <div>
-                                    <h3 className="text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
+                                    <h3 className="header text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
                                         {benefits[1].title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm lg:text-base">
+                                    <p className="para text-gray-400 text-sm lg:text-base">
                                         {benefits[1].description}
                                     </p>
                                 </div>
@@ -91,10 +91,10 @@ const OurBenifits = () => {
                             <div className="bg-[#121212] rounded-lg p-6 shadow-md flex items-start gap-4 flex-col">
                                 <div className="bg-[#161616] p-3 rounded-lg border-1 border-solid-white">{benefits[2].icon}</div>
                                 <div>
-                                    <h3 className="text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
+                                    <h3 className="header text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
                                         {benefits[2].title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm lg:text-base">
+                                    <p className="para text-gray-400 text-sm lg:text-base">
                                         {benefits[2].description}
                                     </p>
                                 </div>
@@ -103,10 +103,10 @@ const OurBenifits = () => {
                             <div className="bg-[#121212] rounded-lg p-6 shadow-md flex items-start gap-4 flex-col">
                                 <div className="bg-[#161616] p-3 rounded-lg border-1 border-solid-white">{benefits[3].icon}</div>
                                 <div>
-                                    <h3 className="text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
+                                    <h3 className="header text-lg lg:text-xl text-[#EB0000] font-semibold mb-2">
                                         {benefits[3].title}
                                     </h3>
-                                    <p className="text-gray-400 text-sm lg:text-base">
+                                    <p className="para text-gray-400 text-sm lg:text-base">
                                         {benefits[3].description}
                                     </p>
                                 </div>

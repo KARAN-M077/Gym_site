@@ -18,8 +18,8 @@ const OurServices = () => {
     <section className="w-full py-24 bg-black">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-[#EB0000] mb-5">Our Services</h2>
-          <p className="text-xl text-white">
+          <h2 className="header text-4xl font-extrabold text-[#EB0000] mb-5">Our Services</h2>
+          <p className=" para text-xl text-white">
             GumFluencer offers 5 essential services to help you<br />
             achieve your fitness goals with ease and flexibility.
           </p>
@@ -35,8 +35,8 @@ const OurServices = () => {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-6 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-2xl font-bold text-white mb-2">{service.title}</h3>
-                  <p className="text-gray-200 text-sm">{service.description}</p>
+                  <h3 className="header text-2xl font-bold text-white mb-2">{service.title}</h3>
+                  <p className="para text-gray-200 text-sm">{service.description}</p>
                 </div>
               </div>
             </div>

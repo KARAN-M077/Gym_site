@@ -65,8 +65,8 @@ const GymLocator = () => {
     <div className="bg-black text-white py-10">
       {/* Header Section */}
       <div className="text-center mb-10">
-        <h2 className="text-red-600 text-4xl font-bold mb-2">FIND YOUR NEAREST GYM</h2>
-        <p className="text-lg">
+        <h2 className="header text-[#EB0000] text-4xl font-bold mb-2">FIND YOUR NEAREST GYM</h2>
+        <p className="para text-lg">
           Easily discover gyms near your location to kickstart your fitness journey today!
         </p>
       </div>
@@ -89,13 +89,13 @@ const GymLocator = () => {
               />
               {/* Gym Info */}
               <div className="p-5 w-2/3">
-                <h3 className="text-xl font-extrabold mb-2">{gym.name}</h3>
-                <div className="flex items-center gap-2 text-white mb-2 ">
-                  <FaPhoneAlt className="text-red-500" />
+                <h3 className="header text-xl font-extrabold mb-2">{gym.name}</h3>
+                <div className="para flex items-center gap-2 text-white mb-2 ">
+                  <FaPhoneAlt className="text-[#EB0000]" />
                   <span>{gym.contact}</span>
                 </div>
                 <div className="flex items-center gap-2 text-white">
-                  <MdLocationOn className="text-red-500" />
+                  <MdLocationOn className="para text-[#EB0000]" />
                   <span>{gym.location}</span>
                 </div>
               </div>

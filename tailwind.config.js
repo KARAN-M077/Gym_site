@@ -8,8 +8,18 @@ export default {
     extend: {
       animation: {
         scroll: "scroll 20s linear infinite", // Continuous scrolling animation
+        'marquee-left': 'marqueeLeft 20s linear infinite',
+        'marquee-right': 'marqueeRight 20s linear infinite',
       },
       keyframes: {
+        marqueeLeft: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
+        marqueeRight: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
         scroll: {
           "0%": { transform: "translateX(0)" },          // Start at 0
           "100%": { transform: "translateX(-100%)" },    // Move left to end

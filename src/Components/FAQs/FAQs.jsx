@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import bg4 from "../../assets/bg4.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const faqData = [
   {
     id: 1,
@@ -30,10 +31,16 @@ const faqData = [
 ];
 
 const FAQs = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, 
+      once: true, 
+    });
+  }, []);
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index); // Toggle functionality
+    setOpenIndex(openIndex === index ? null : index); 
   };
 
   return (
@@ -45,10 +52,10 @@ const FAQs = () => {
         backgroundPosition: "center",
       }}
     >
-      <h2 className="text-white text-3xl font-bold mb-8 text-center">
+      <h2 className="header text-white text-3xl font-bold mb-8 text-center mt-14" data-aos="zoom-in">
         FREQUENTLY ASKED QUESTIONS
       </h2>
-      <div className="w-full max-w-4xl flex flex-col gap-4 px-4">
+      <div className="w-full max-w-4xl flex flex-col gap-4 px-4" data-aos="zoom-in">
         {faqData.map((faq, index) => (
           <div
             key={faq.id}
@@ -58,7 +65,7 @@ const FAQs = () => {
               className="w-full text-left p-4 flex justify-between items-center focus:outline-none text-white"
               onClick={() => toggleFAQ(index)}
             >
-              <span className="text-lg font-semibold">{faq.question}</span>
+              <span className="para text-lg font-semibold">{faq.question}</span>
               <span className="text-xl">
                 {openIndex === index ? "✕" : "+"}
               </span>
@@ -68,7 +75,7 @@ const FAQs = () => {
                 openIndex === index ? "max-h-40" : "max-h-0"
               }`}
             >
-              <div className="p-4 text-white">
+              <div className="para p-4 text-white">
                 <p>{faq.answer}</p>
               </div>
             </div>

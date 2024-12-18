@@ -1,9 +1,10 @@
-import React from "react";
+import React , {useEffect} from "react";
 import bg3 from "../../assets/bg3.png";
 import card1 from "../../assets/card1.png";
 import card2 from "../../assets/card2.png";
 import card3 from "../../assets/card3.png";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const testimonials = [
   {
     id: 1,
@@ -32,6 +33,12 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, 
+      once: true,
+    });
+  }, []);
   return (
     <>
 <div
@@ -40,13 +47,13 @@ const Testimonials = () => {
     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bg3})`,
   }}
 >
-  <div className="mt-10">
-    <p className="text-white font-extrabold text-[36px]">WHAT PEOPLE SAY</p>
+  <div className="mt-10" data-aos="slide-right">
+    <p className="header text-white font-extrabold text-[36px]">WHAT PEOPLE SAY</p>
   </div>
 
   <div className="relative overflow-hidden py-10 w-screen">
     {/* Scrollable Container */}
-    <div className="flex animate-scroll space-x-8 w-[200%]">
+    <div className="flex animate-scroll space-x-8 w-[200%]" data-aos="slide-right">
       {/* Duplicate the testimonials for seamless scrolling */}
       {[...testimonials, ...testimonials].map((testimonial, index) => (
         <div

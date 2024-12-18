@@ -26,17 +26,17 @@ const Hub = () => {
       <div className="flex flex-col-reverse lg:flex-row justify-between items-center w-full h-full px-4 sm:px-10 lg:px-20 gap-8">
         {/* Left Section */}
         <div className="text-center lg:text-left mt-10 lg:mt-20">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-red-600 mb-6 leading-[40px] sm:leading-[50px] lg:leading-[60px]">
+          <h2 className=" header text-3xl sm:text-4xl lg:text-5xl font-extrabold text-red-600 mb-6 leading-[40px] sm:leading-[50px] lg:leading-[60px]">
             YOUR <br /> PERSONALIZED FITNESS HUB
           </h2>
-          <p className="text-white text-sm sm:text-base lg:text-lg font-bold mb-6">
+          <p className="para text-white text-sm sm:text-base lg:text-lg font-bold mb-6">
             Personalized workout routines tailored to your goals and preferences.
           </p>
-          <p className="text-white text-sm sm:text-base lg:text-lg font-bold mb-6">
+          <p className="para text-white text-sm sm:text-base lg:text-lg font-bold mb-6">
             Get expert guidance with virtual coaching sessions, available anytime,
             anywhere.
           </p>
-          <p className="text-white text-sm sm:text-base lg:text-lg font-bold">
+          <p className="para text-white text-sm sm:text-base lg:text-lg font-bold">
             Track your fitness journey with detailed analytics, goal setting, and
             achievements.
           </p>
